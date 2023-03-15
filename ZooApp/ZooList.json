@@ -1,0 +1,46 @@
+[
+    {
+        "image": "zoolist",
+        "name": "Zoo Khatai",
+        "info": "Khudu Mammadov 29",
+        "about":
+            {
+                "image": "zoolist",
+                "name": "Zoo Khatai",
+                "address": "Khudu Mammadov 29",
+                "phone": "+994503110025"
+            }
+    },
+    {
+        "image": "zoolist",
+        "name": "Zoo Nizami",
+        "info": "Qara Qarayev 124",
+        "about": {
+            "image": "zoolist",
+            "name": "Zoo Nizami",
+            "info": "Qara Qarayev 124",
+            "phone": "+994552356500"
+        }
+    },
+    {
+        "image": "zoolist",
+        "name": "Zoo Narimanov",
+        "info": "Jeyhun Hacibeyli 18",
+        "about": {
+            "image": "zoolist",
+            "name": "Zoo Narimanov",
+            "info": "Jeyhun Hacibeyli 18",
+            "phone":
+        }
+    },
+    {
+        "image": "zoolist",
+        "name": "Zoo Sabail",
+        "info": "Street 33"
+    },
+    {
+        "image": "zoolist",
+        "name": "Zoo Nesimi",
+        "info": "Street 29"
+    }
+]

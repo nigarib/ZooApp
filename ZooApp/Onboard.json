@@ -1,0 +1,15 @@
+
+[
+    {
+        "image": "onboard1",
+        "label": "Welcome"
+    },
+    {
+        "image": "onboard2",
+        "label": "hello"
+    },
+    {
+        "image": "onboard3",
+        "label": "hi"
+    }
+]
