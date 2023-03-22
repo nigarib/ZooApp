@@ -31,7 +31,7 @@ struct AboutZooList: Codable {
 struct AnimalsList: Codable {
     let image: String
     let animal: String
-    let about: String? //aboutanimalslist olacaq gelecekde helelik string formatda qalsin
+    let about: AboutAnimalsList? //aboutanimalslist olacaq gelecekde helelik string formatda qalsin
 }
 
 struct AboutAnimalsList: Codable {
@@ -40,3 +40,9 @@ struct AboutAnimalsList: Codable {
     let info: String
 }
 
+struct User: Codable {
+    var fullname: String
+    var contactnumber: String
+    var email: String
+    var password: String
+}

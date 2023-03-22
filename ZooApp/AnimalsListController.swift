@@ -27,6 +27,12 @@ class AnimalsListController: UIViewController, UICollectionViewDataSource, UICol
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalsCollectionViewCell", for: indexPath) as! AnimalsCollectionViewCell
         cell.animalsImage.image = UIImage(named: animalsList[indexPath.item].image)
         cell.animalName.text = animalsList[indexPath.item].animal
+        cell.tag = indexPath.item
+        cell.animalListCallBack = { index in
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AnimalInfoViewController") as! AnimalInfoViewController
+            vc.animalsInfo = self.animalsList[index].about
+            self.navigationController?.present(vc, animated: true)
+        }
         return cell
     }
     

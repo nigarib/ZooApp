@@ -65,13 +65,9 @@ class ZooMainController: UIViewController, UICollectionViewDataSource, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalsCollectionViewCell", for: indexPath) as! AnimalsCollectionViewCell
-//        cell.animalListCallBack = {
-//
-//        }
+
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AnimalsListController") as! AnimalsListController
         vc.animalsList = zooList[indexPath.item].animal ?? []
-//        vc.zooInfo = zooList[indexPath.item].about
         navigationController?.show(vc, sender: nil)
     }
     

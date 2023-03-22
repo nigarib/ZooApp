@@ -9,12 +9,13 @@ import UIKit
 
 class AnimalsCollectionViewCell: UICollectionViewCell {
     
-    var animalListCallBack: (()->())?
+    var animalListCallBack: ((Int)->())?
     
     @IBOutlet weak var animalsImage: UIImageView!
     @IBOutlet weak var animalName: UILabel!
     
     @IBAction func animalAbout(_ sender: Any) {
+        animalListCallBack?(tag)
     }
     @IBAction func animalFavorite(_ sender: Any) {
     }
