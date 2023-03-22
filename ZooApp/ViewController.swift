@@ -18,6 +18,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         buttonOutlet.layer.cornerRadius = 10
         onboardJsonRead()
+        navigationController?.navigationBar.isHidden = true
             }
     
     func onboardJsonRead() {
@@ -53,7 +54,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBAction func button(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
         navigationController?.show(vc, sender: nil)
-        
         
     }
     

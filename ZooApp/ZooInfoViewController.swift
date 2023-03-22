@@ -12,9 +12,7 @@ class ZooInfoViewController: UIViewController {
     var zooInfo: AboutZooList?
     
     @IBOutlet weak var zooInfoImage: UIImageView!
-    
     @IBOutlet weak var zooInfoName: UILabel!
-    
     @IBOutlet weak var zooInfoAddress: UILabel!
     @IBOutlet weak var zooInfoPhone: UILabel!
     

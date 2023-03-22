@@ -49,19 +49,38 @@ class ZooMainController: UIViewController, UICollectionViewDataSource, UICollect
             vc.zooInfo = self.zooList[index].about
             self.navigationController?.present(vc, animated: true)
         }
+        cell.backgroundColor = .red
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 250)
+        let width = collectionView.frame.width / 2 - 10
+        print(collectionView.frame.width)
+        print(width)
+        return CGSize(width: width - 24, height: 200)
     }
-   
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ZooInfoViewController") as! ZooInfoViewController
-        vc.zooInfo = zooList[indexPath.item].about
-        navigationController?.present(vc, animated: true)
-        
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalsCollectionViewCell", for: indexPath) as! AnimalsCollectionViewCell
+//        cell.animalListCallBack = {
+//
+//        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AnimalsListController") as! AnimalsListController
+        vc.animalsList = zooList[indexPath.item].animal ?? []
+//        vc.zooInfo = zooList[indexPath.item].about
+        navigationController?.show(vc, sender: nil)
     }
+    
+    @IBAction func gridButton(_ sender: Any) {
+//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//            CGSize(width: 50, height: 50)
+//        }
+//        zooListCollectionView.reloadData()
+    }
+    
     
 }

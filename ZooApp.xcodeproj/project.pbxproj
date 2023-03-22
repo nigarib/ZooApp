@@ -18,6 +18,8 @@
 		057EC81629B7C19D00A69C42 /* ZooMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EC81529B7C19D00A69C42 /* ZooMainController.swift */; };
 		0596EF0C29B48CC300153E31 /* OnboardItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596EF0B29B48CC300153E31 /* OnboardItems.swift */; };
 		0596EF0E29B5E27200153E31 /* Onboard.json in Resources */ = {isa = PBXBuildFile; fileRef = 0596EF0D29B5E27200153E31 /* Onboard.json */; };
+		05E608C429C9AF7900F86BD0 /* AnimalsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E608C329C9AF7900F86BD0 /* AnimalsListController.swift */; };
+		05E608C629C9BB1900F86BD0 /* AnimalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E608C529C9BB1900F86BD0 /* AnimalsCollectionViewCell.swift */; };
 		05FEB2AC29BA299A0052C1B0 /* ZooMainFirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FEB2AB29BA299A0052C1B0 /* ZooMainFirstCollectionViewCell.swift */; };
 		05FEB2AE29BC71F60052C1B0 /* ZooList.json in Resources */ = {isa = PBXBuildFile; fileRef = 05FEB2AD29BC71F60052C1B0 /* ZooList.json */; };
 		05FEB2B029BFA88F0052C1B0 /* ZooInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FEB2AF29BFA88F0052C1B0 /* ZooInfoViewController.swift */; };
@@ -39,6 +41,8 @@
 		057EC81529B7C19D00A69C42 /* ZooMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooMainController.swift; sourceTree = "<group>"; };
 		0596EF0B29B48CC300153E31 /* OnboardItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardItems.swift; sourceTree = "<group>"; };
 		0596EF0D29B5E27200153E31 /* Onboard.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Onboard.json; sourceTree = "<group>"; };
+		05E608C329C9AF7900F86BD0 /* AnimalsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListController.swift; sourceTree = "<group>"; };
+		05E608C529C9BB1900F86BD0 /* AnimalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsCollectionViewCell.swift; sourceTree = "<group>"; };
 		05FEB2AB29BA299A0052C1B0 /* ZooMainFirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooMainFirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		05FEB2AD29BC71F60052C1B0 /* ZooList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ZooList.json; sourceTree = "<group>"; };
 		05FEB2AF29BFA88F0052C1B0 /* ZooInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooInfoViewController.swift; sourceTree = "<group>"; };
@@ -79,11 +83,13 @@
 				0567BB0129B33A1700220949 /* AppDelegate.swift */,
 				0567BB0329B33A1700220949 /* SceneDelegate.swift */,
 				0567BB0529B33A1700220949 /* ViewController.swift */,
-				057EC81529B7C19D00A69C42 /* ZooMainController.swift */,
-				0596EF0B29B48CC300153E31 /* OnboardItems.swift */,
 				0556416B29B3EC4E00BDD1A8 /* OnboardCollectionViewCell.swift */,
+				057EC81529B7C19D00A69C42 /* ZooMainController.swift */,
 				05FEB2AB29BA299A0052C1B0 /* ZooMainFirstCollectionViewCell.swift */,
 				05FEB2AF29BFA88F0052C1B0 /* ZooInfoViewController.swift */,
+				05E608C329C9AF7900F86BD0 /* AnimalsListController.swift */,
+				05E608C529C9BB1900F86BD0 /* AnimalsCollectionViewCell.swift */,
+				0596EF0B29B48CC300153E31 /* OnboardItems.swift */,
 				0596EF0D29B5E27200153E31 /* Onboard.json */,
 				05FEB2AD29BC71F60052C1B0 /* ZooList.json */,
 				0567BB0729B33A1700220949 /* Main.storyboard */,
@@ -172,11 +178,13 @@
 			files = (
 				057EC81629B7C19D00A69C42 /* ZooMainController.swift in Sources */,
 				05FEB2B429C0FDD20052C1B0 /* RegisterViewController.swift in Sources */,
+				05E608C629C9BB1900F86BD0 /* AnimalsCollectionViewCell.swift in Sources */,
 				0567BB0C29B33A1700220949 /* ZooApp.xcdatamodeld in Sources */,
 				0567BB0629B33A1700220949 /* ViewController.swift in Sources */,
 				05FEB2AC29BA299A0052C1B0 /* ZooMainFirstCollectionViewCell.swift in Sources */,
 				0567BB0229B33A1700220949 /* AppDelegate.swift in Sources */,
 				0556416C29B3EC4E00BDD1A8 /* OnboardCollectionViewCell.swift in Sources */,
+				05E608C429C9AF7900F86BD0 /* AnimalsListController.swift in Sources */,
 				05FEB2B029BFA88F0052C1B0 /* ZooInfoViewController.swift in Sources */,
 				0596EF0C29B48CC300153E31 /* OnboardItems.swift in Sources */,
 				05FEB2B229C0FD600052C1B0 /* LoginViewController.swift in Sources */,

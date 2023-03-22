@@ -31,7 +31,7 @@ struct AboutZooList: Codable {
 struct AnimalsList: Codable {
     let image: String
     let animal: String
-    let about: [AboutAnimalsList]
+    let about: String? //aboutanimalslist olacaq gelecekde helelik string formatda qalsin
 }
 
 struct AboutAnimalsList: Codable {
