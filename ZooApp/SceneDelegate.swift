@@ -12,11 +12,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
 
+//    func setRootController(windowScene: UIWindowScene) {
+//        if window == nil {
+//            window = UIWindow(windowScene: windowScene)
+//        }
+//        window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "favNav") as! UINavigationController
+//        window?.makeKeyAndVisible()
+//    }
+    
+    func setTabbarRootController(windowScene: UIWindowScene) {
+        if window == nil {
+            window = UIWindow(windowScene: windowScene)
+        }
+        window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        window?.makeKeyAndVisible()
+    }
+
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        if UserDefaults.standard.bool(forKey: "onboardskipped") {
+            setTabbarRootController(windowScene: windowScene)
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

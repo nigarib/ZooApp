@@ -26,8 +26,9 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
         if let email = emailOutlet.text, let password = passwordOutlet.text, !email.isEmpty, !password.isEmpty {
             if password.count >= 5 && password.count <= 10 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "FavoriteViewController") as! FavoriteViewController
-                navigationController?.show(vc, sender: nil)
+                UserDefaults.standard.set(true, forKey: "loggedIn")
+                navigationController?.popViewController(animated: true)
+
             } else {
                 print("Sifre yalnisdir")
             }

@@ -14,9 +14,10 @@ class ZooMainFirstCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var zooInfoLabel: UILabel!
     
     var infoZooCallBack: ((Int)->())?
+    var favZooCallBack: (()->())?
     
     @IBAction func favoriteZooListButton(_ sender: Any) {
-        
+        favZooCallBack?()
     }
     
     @IBAction func infoZooListButton(_ sender: Any) {

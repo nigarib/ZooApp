@@ -13,6 +13,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     var slides = [OnboardItems]()
+    var currentPage = 0 {
+        didSet {
+            if currentPage == slides.count - 1 {
+                buttonOutlet.setTitle("Start", for: .normal)
+            } else {
+                buttonOutlet.setTitle("Next", for: .normal)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +61,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     @IBAction func button(_ sender: Any) {
+        
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
         navigationController?.show(vc, sender: nil)
-        
+        UserDefaults.standard.set(true, forKey: "onboardskipped")
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        currentPage = Int(scrollView.contentOffset.x / width)
+        pageControl.currentPage = currentPage
     }
     
 }

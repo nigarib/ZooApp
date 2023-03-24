@@ -2,14 +2,14 @@
 [
     {
         "image": "onboard1",
-        "label": "Welcome"
+        "label": "Hey!"
     },
     {
         "image": "onboard2",
-        "label": "hello"
+        "label": "Welcome"
     },
     {
         "image": "onboard3",
-        "label": "hi"
+        "label": "click to start"
     }
 ]

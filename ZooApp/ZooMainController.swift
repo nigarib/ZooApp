@@ -13,7 +13,6 @@ class ZooMainController: UIViewController, UICollectionViewDataSource, UICollect
     @IBOutlet weak var zooListCollectionView: UICollectionView!
     var zooList = [ZooList]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         zooListJsonRead()
@@ -49,20 +48,28 @@ class ZooMainController: UIViewController, UICollectionViewDataSource, UICollect
             vc.zooInfo = self.zooList[index].about
             self.navigationController?.present(vc, animated: true)
         }
-        cell.backgroundColor = .red
+//        login olmayibsa login sehifesine kechsin, olubsa favorite ya da evvelki sehifeye atsin
+        cell.favZooCallBack = {
+            if UserDefaults.standard.bool(forKey: "loggedIn") {
+                print("hi")
+            } else {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                self.navigationController?.show(vc, sender: nil)
+            }
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width / 2 - 10
+//        let width = collectionView.frame.width / 2 - 10
         print(collectionView.frame.width)
-        print(width)
-        return CGSize(width: width - 24, height: 200)
+//        print(width)
+        return CGSize(width: collectionView.frame.width, height: 200)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
