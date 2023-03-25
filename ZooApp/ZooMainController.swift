@@ -7,15 +7,18 @@
 
 import UIKit
 
-class ZooMainController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+class ZooMainController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+
     @IBOutlet weak var searchOutlet: UISearchBar!
     @IBOutlet weak var zooListCollectionView: UICollectionView!
+    
     var zooList = [ZooList]()
+    var zooListOriginal = [ZooList]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         zooListJsonRead()
+        searchOutlet.delegate = self
         
     }
     
@@ -24,6 +27,7 @@ class ZooMainController: UIViewController, UICollectionViewDataSource, UICollect
            let data = try? Data(contentsOf: jsonFile) {
             do {
                 zooList = try JSONDecoder().decode([ZooList].self, from: data)
+                zooListOriginal = zooList
                 zooListCollectionView.reloadData()
             } catch {
                 print(error.localizedDescription)
@@ -33,6 +37,17 @@ class ZooMainController: UIViewController, UICollectionViewDataSource, UICollect
         }
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            zooList = zooListOriginal
+        } else {
+            zooList = zooListOriginal.filter({ item in
+                item.name.contains(searchText)
+            })
+        }
+        zooListCollectionView.reloadData()
+    }
+//
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         zooList.count
     }
