@@ -10,10 +10,14 @@ import UIKit
 class ZooMainController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
     @IBOutlet weak var searchOutlet: UISearchBar!
+    @IBOutlet weak var gridBtnOutlet: UIButton!
     @IBOutlet weak var zooListCollectionView: UICollectionView!
+    
+    
     
     var zooList = [ZooList]()
     var zooListOriginal = [ZooList]()
+    var isgrid = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,9 +80,9 @@ class ZooMainController: UIViewController, UICollectionViewDataSource, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width = collectionView.frame.width / 2 - 10
-        print(collectionView.frame.width)
-//        print(width)
+        if isgrid {
+            return CGSize(width: collectionView.frame.width / 2 - 10, height: 200)
+        }
         return CGSize(width: collectionView.frame.width, height: 200)
     }
     
@@ -94,10 +98,11 @@ class ZooMainController: UIViewController, UICollectionViewDataSource, UICollect
     }
     
     @IBAction func gridButton(_ sender: Any) {
-//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//            CGSize(width: 50, height: 50)
-//        }
-//        zooListCollectionView.reloadData()
+        isgrid = !isgrid
+        let imageName = isgrid ? "square.grid.3x1.below.line.grid.1x2" : "list.bullet"
+        gridBtnOutlet.setImage(UIImage(systemName: imageName),
+                               for: .normal)
+        zooListCollectionView.reloadData()
     }
     
     

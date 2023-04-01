@@ -235,7 +235,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="square.grid.3x1.below.line.grid.1x2" catalog="system"/>
+                                <state key="normal" image="list.bullet" catalog="system"/>
                                 <connections>
                                     <action selector="gridButton:" destination="tqL-DG-GJF" eventType="touchUpInside" id="R3g-7E-POd"/>
                                 </connections>
@@ -243,6 +243,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="gridBtnOutlet" destination="TF6-Hc-83t" id="Msi-2a-VZY"/>
                         <outlet property="searchOutlet" destination="a1U-6a-Swj" id="cQ1-4j-HzG"/>
                         <outlet property="zooListCollectionView" destination="6PM-hW-sax" id="38t-H0-1yy"/>
                     </connections>
@@ -632,16 +633,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wML-Ox-Qox">
-                                <rect key="frame" x="175" y="395" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ssc-QD-IpI">
+                                <rect key="frame" x="16" y="103" width="361" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="As6-Qe-6hh">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NPo-Bg-qD8">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6gN-uu-Fbm">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o8y-cP-ppo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ssc-QD-IpI" firstAttribute="bottom" secondItem="o8y-cP-ppo" secondAttribute="bottom" constant="43" id="8b4-y6-juS"/>
+                            <constraint firstItem="Ssc-QD-IpI" firstAttribute="centerX" secondItem="o8y-cP-ppo" secondAttribute="centerX" id="boW-nM-NGp"/>
+                            <constraint firstItem="Ssc-QD-IpI" firstAttribute="width" secondItem="37J-An-3X5" secondAttribute="width" multiplier="0.918575" id="gfz-28-6q1"/>
+                            <constraint firstItem="Ssc-QD-IpI" firstAttribute="top" secondItem="o8y-cP-ppo" secondAttribute="top" id="sAY-4G-tmQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lxc-wU-Yqd"/>
                 </viewController>
@@ -727,7 +747,7 @@
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="info" catalog="system" width="93" height="128"/>
-        <image name="square.grid.3x1.below.line.grid.1x2" catalog="system" width="128" height="114"/>
+        <image name="list.bullet" catalog="system" width="128" height="87"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
