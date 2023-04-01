@@ -39,5 +39,11 @@ class AnimalsListController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width, height: 200)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "AnimalInfoViewController") as! AnimalInfoViewController
+        vc.animalsInfo = animalsList[indexPath.row].about
+        navigationController?.present(vc, animated: true)
+    }
 
 }
